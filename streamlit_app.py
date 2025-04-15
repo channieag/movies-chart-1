@@ -12,7 +12,7 @@ st.sidebar.checkbox("Dưới 12 tuổi")
 st.sidebar.checkbox("12-18 tuổi")
 st.sidebar.checkbox("Trên 18 tuổi")
 
-st.sidebar.title("🎥 Your Movie Preferences")
+st. sidebar.title("🎥 Your Movie Preferences")
 favorite_genre = st.sidebar.selectbox(
     "What's your favorite movie genre?",
     ["Action", "Comedy", "Drama", "Horror", "Romance", "Sci-Fi", "Animation"]
