@@ -35,7 +35,7 @@ np.random.seed(42)
 daily_movies_random = np.random.rand(7)  
 daily_movies_random = daily_movies_random / daily_movies_random.sum()  
 daily_movies_random = daily_movies_random * watch_frequency 
-daily_movies_random = np.round(daily_movies_random, 0)
+daily_movies_random = np.round(daily_movies_random)
 
 fig1 = plt.figure(figsize=(20, 12))
 plt.plot(days, daily_movies_random, marker = 'o', linestyle = '--', color = 'g', markersize = 10)
