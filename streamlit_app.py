@@ -64,7 +64,7 @@ country = avg_score["country"]
 score = avg_score["score"]
 
 fig2 = plt.figure(figsize=(20, 12))
-bars = plt.bar(country, score, color ="g", edgecolor = "black")
+bars = plt.bar(score, country, color ="g", edgecolor = "black")
 
 for bar in bars:
     yval = bar.get_height()
