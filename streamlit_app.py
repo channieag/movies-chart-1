@@ -52,7 +52,7 @@ movies_data = pd.read_csv("https://raw.githubusercontent.com/nv-thang/Data-Visua
 countries = st.multiselect(
     "Countries",
     movies_data.country.unique(),
-    ["United Kingdom", "United States", "Canada", "China", "West Germany", "Australia", "Italy"])
+    ["United Kingdom", "United States", "Lebanon", "Iran", "Argentina", "India", "Colombia", "South Korea"])
 
 movies_data = movies_data.dropna()
 
