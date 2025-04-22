@@ -65,12 +65,12 @@ fig2 = plt.figure(figsize=(20, 12))
 bars = plt.bar(country, score, color ="g", edgecolor = "black")
 
 for bar in bars:
-    yval = bar.get_height()
-    plt.text(yval + 0.1, bar.get_x() + bar.get_width()/2.0, f"{yval:.2f}", va ='center', fontsize = 10)
+    yval = bar.get_width()
+    plt.text(yval + 0.1, bar.get_y() + bar.get_height()/2.0, f"{yval:.2f}", va ='center', fontsize = 10)
     
 plt.xlabel("Average Score", fontsize = 14, weight = 550)
 plt.ylabel("Country", fontsize = 14, weight = 550)
 plt.xticks(rotation = 60)
 plt.title("Matplotlib Bar Chart Showing the Average Score of Movies in Each Country", fontsize = 18, weight = 700)
-plt.grid(axis = 'x', linestyle = '--', alpha = 0.5)
+plt.grid(axis = 'y', linestyle = '--', alpha = 0.5)
 st.pyplot(fig2)
