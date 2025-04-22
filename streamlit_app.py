@@ -31,14 +31,12 @@ st.write(f"**Movies per week:** {watch_frequency}")
 # Vẽ biểu đồ đường thể hiện số phim coi mỗi ngày trong tuần
 days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
-np.random.seed(42) 
-daily_movies_random = np.random.rand(7)  
-daily_movies_random = daily_movies_random / daily_movies_random.sum()  
-daily_movies_random = daily_movies_random * watch_frequency 
-daily_movies_random = np.round(daily_movies_random)
+movies_data = pd.read_csv("https://raw.githubusercontent.com/nv-thang/Data-Visualization-Course/main/Dataset%20for%20Practice/movies.csv")
+avg_time = movies_data.groupby("year")["runtime"].mean().round(2).reset_index()
+year = avg_time["year"]
 
 fig1 = plt.figure(figsize=(20, 12))
-plt.plot(days, daily_movies_random, marker = 'o', linestyle = '--', color = 'g', markersize = 10)
+plt.plot(year, avg_time, marker = 'o', linestyle = '--', color = 'g', markersize = 10)
 plt.title("Number of Movies Watched per Day", fontsize = 20, weight = 'bold')
 plt.xlabel("Day", fontsize = 14, weight = 550)
 plt.ylabel("Number of Movies", fontsize = 14, weight = 550)
@@ -48,7 +46,7 @@ st.pyplot(fig1)
 # Vẽ biểu đồ cột ngang thể hiện điểm trung bình phim theo quốc qia (top 15)
 st.title("🎬 Average Movie Score by Country")
 st.subheader("✔️ Choose Countries")
-movies_data = pd.read_csv("https://raw.githubusercontent.com/nv-thang/Data-Visualization-Course/main/Dataset%20for%20Practice/movies.csv")
+
 countries = st.multiselect(
     "Countries",
     movies_data.country.unique(),
