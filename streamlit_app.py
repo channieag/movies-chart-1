@@ -65,8 +65,8 @@ fig2 = plt.figure(figsize=(20, 12))
 bars = plt.bar(country, score, color ="g", edgecolor = "black")
 
 for bar in bars:
-    yval = bar.get_height()
-    plt.text(yval + 0.1, bar.get_x() + bar.get_height()/2.0, f"{yval:.2f}", va ='center', fontsize = 14)
+    xval = bar.get_width()
+    plt.text(xval + 0.1, bar.get_y() + bar.get_width()/2.0, f"{xval:.2f}", va ='center', fontsize = 14)
     
 plt.xlabel("Average Score", fontsize = 14, weight = 550)
 plt.ylabel("Country", fontsize = 14, weight = 550)
